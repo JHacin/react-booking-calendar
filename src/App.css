@@ -3,13 +3,35 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
+.react-calendar-timeline .rct-header-root {
+  border-bottom: none;
+  position: relative;
+  z-index: 99;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0 10px;
+}
+
+.react-calendar-timeline .rct-calendar-header {
+  border: none;
+}
+
 .react-calendar-timeline .rct-dateHeader {
   pointer-events: none;
+  border: none;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.react-calendar-timeline .rct-dateHeader-primary {
+  color: #000;
+  padding-right: 26px;
+  text-transform: uppercase;
 }
 
 /* Vertical lines */
@@ -20,6 +42,7 @@ body {
 .react-calendar-timeline .rct-vertical-lines .rct-vl:nth-child(odd) {
   background: #fff;
 }
+
 .react-calendar-timeline .rct-vertical-lines .rct-vl:nth-child(even) {
   background: #f0f3f4;
 }

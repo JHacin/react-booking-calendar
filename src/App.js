@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import 'moment/locale/sl';
 import Timeline, { TimelineHeaders, SidebarHeader, DateHeader } from 'react-calendar-timeline';
 import { rooms, bookings } from './dummyData';
 import 'react-calendar-timeline/lib/Timeline.css';
@@ -25,7 +26,7 @@ function itemRenderer({ item, itemContext, getItemProps }) {
           left: "0px",
           display: "inline-block",
           overflow: "hidden",
-          padding: "0 6px",
+          padding: "0 10px",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap"
         }}
@@ -34,6 +35,41 @@ function itemRenderer({ item, itemContext, getItemProps }) {
       </div>
     </div>
   );
+}
+
+function intervalRenderer({ intervalContext, getIntervalProps, data }) {
+  return (
+    <div
+      {...getIntervalProps()}
+      className={`rct-dateHeader ${ data.isMonth ? "rct-dateHeader-primary" : ""}`}
+      onClick={() => { return false; }}
+    >
+      <span
+        style={{
+          position: data.isMonth ? "sticky" : "static",
+          marginRight: data.isMonth ? "auto" : "inherit",
+          left: "0px",
+          padding: "0 10px",
+          fontWeight: isWeekendDay(intervalContext, data) || isCurrentDay(intervalContext, data) ? "400" : "300",
+          color: isCurrentDay(intervalContext, data) ? "#d32f2f" : "#000",
+        }}
+      >
+        {intervalContext.intervalText}
+      </span>
+    </div>
+  );
+}
+
+function isWeekendDay(intervalContext, data) {
+  if (data.isMonth) {
+    return false;
+  }
+  const day = intervalContext.interval.startTime.day();
+  return day === 6 || day === 0; // Saturday or Sunday
+}
+
+function isCurrentDay(intervalContext, data) {
+  return !data.isMonth && intervalContext.interval.startTime.isSame(data.currentDate, "day");
 }
 
 function onItemSelect(itemId, e, time) {
@@ -45,6 +81,8 @@ function onCanvasClick(groupId, time, e) {
 }
 
 function App() {
+  const currentDate = moment();
+
   return (
     <div>
       <Timeline
@@ -65,10 +103,14 @@ function App() {
           <DateHeader
             unit="month"
             labelFormat="MMMM"
+            headerData={{ isMonth: true }}
+            intervalRenderer={intervalRenderer}
           />
           <DateHeader
             unit="day"
             labelFormat="D"
+            headerData={{ isMonth: false, currentDate }}
+            intervalRenderer={intervalRenderer}
           />
         </TimelineHeaders>
       </Timeline>
