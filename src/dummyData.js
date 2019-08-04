@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const groups = [
+export const rooms = [
   {
     id: 1,
     title: 'Room 1'
@@ -43,7 +43,7 @@ export const groups = [
   }
 ];
 
-export const items = [
+export const bookings = [
   {
     id: 1,
     group: 1,

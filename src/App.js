@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
-import Timeline, {TimelineHeaders, SidebarHeader, DateHeader } from 'react-calendar-timeline';
-import { groups, items } from './dummyData';
+import Timeline, { TimelineHeaders, SidebarHeader, DateHeader } from 'react-calendar-timeline';
+import { rooms, bookings } from './dummyData';
 import 'react-calendar-timeline/lib/Timeline.css';
 import './App.css';
 
@@ -17,8 +17,8 @@ function App() {
   return (
     <div>
       <Timeline
-        groups={groups}
-        items={items}
+        groups={rooms}
+        items={bookings}
         defaultTimeStart={moment().add(-2, 'day')}
         defaultTimeEnd={moment().add(10, 'day')}
         sidebarWidth={0}

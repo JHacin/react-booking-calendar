@@ -1,3 +1,16 @@
+/* Header */
 .react-calendar-timeline .rct-dateHeader {
   pointer-events: none;
+}
+
+/* Vertical lines */
+.react-calendar-timeline .rct-vertical-lines .rct-vl {
+  border-left: none;
+}
+
+.react-calendar-timeline .rct-vertical-lines .rct-vl:nth-child(odd) {
+  background: #fff;
+}
+.react-calendar-timeline .rct-vertical-lines .rct-vl:nth-child(even) {
+  background: #f0f3f4;
 }
