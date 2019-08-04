@@ -19,8 +19,8 @@ function App() {
       <Timeline
         groups={rooms}
         items={bookings}
-        defaultTimeStart={moment().add(-2, 'day')}
-        defaultTimeEnd={moment().add(10, 'day')}
+        defaultTimeStart={moment().startOf('day').add(-3, 'day')}
+        defaultTimeEnd={moment().startOf('day').add(5, 'day')}
         sidebarWidth={0}
         lineHeight={100}
         itemHeightRatio={0.5}
