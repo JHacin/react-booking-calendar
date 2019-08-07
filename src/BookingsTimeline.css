@@ -34,5 +34,5 @@
 }
 
 .react-calendar-timeline .rct-vertical-lines .rct-vl:nth-child(even) {
-  background: var(--color-vertical-line-lightgray);
+  background: var(--color-lightgray);
 }

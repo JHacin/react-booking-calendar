@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import BookingsTimeline from './BookingsTimeline';
+import FooterMenu from './FooterMenu';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BookingsTimeline />
+      <FooterMenu />
     </div>
   );
 }

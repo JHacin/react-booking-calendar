@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "interactjs": "^1.5.4",
     "moment": "^2.24.0",
     "react": "^16.8.6",

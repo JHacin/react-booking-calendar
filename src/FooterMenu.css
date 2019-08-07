@@ -1,0 +1,37 @@
+.App-FooterMenu {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 6px var(--color-border-lightgray);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-menu-height);
+  z-index: 99;
+  box-sizing: border-box;
+  background: var(--color-white);
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.FooterMenu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.FooterMenu-item.active {
+  color: rgb(211, 47, 47);
+}
+
+.FooterMenu-item i {
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+
+.FooterMenu-item span {
+  font-size: 10px;
+}
