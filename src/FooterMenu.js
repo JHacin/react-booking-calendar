@@ -1,18 +1,21 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import "./FooterMenu.css";
 import "font-awesome/css/font-awesome.min.css";
 
 const FooterMenuItem = props => {
-  const { iconName, title, isActive } = props;
+  const { fontAwesomeClass, title, link } = props;
 
   return (
-    <div
-      className={`FooterMenu-item ${isActive && "active"}`}
-      onClick={() => { alert("Menu link clicked."); }}
+    <NavLink
+      to={link}
+      className="FooterMenu-item"
+      activeClassName="active"
+      exact
     >
-      <i className={`fa fa-${iconName}`}></i>
+      <i className={fontAwesomeClass}></i>
       <span>{title}</span>
-    </div>
+    </NavLink>
   );
 };
 
@@ -21,17 +24,19 @@ export default class FooterMenu extends Component {
     return (
       <div className="App-FooterMenu">
         <FooterMenuItem
-          iconName="bed"
+          fontAwesomeClass="fa fa-bed"
           title="Rooms"
+          link="/rooms/"
         />
         <FooterMenuItem
-          iconName="calendar"
+          fontAwesomeClass="fa fa-calendar"
           title="Bookings"
-          isActive={true}
+          link="/"
         />
         <FooterMenuItem
-          iconName="cogs"
+          fontAwesomeClass="fa fa-cogs"
           title="Settings"
+          link="/settings/"
         />
       </div>
     );
