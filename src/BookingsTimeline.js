@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import moment from 'moment';
-import 'moment/locale/sl';
-import Timeline, { TimelineHeaders, SidebarHeader, DateHeader } from 'react-calendar-timeline';
-import { rooms, bookings } from './dummy_data';
-import 'react-calendar-timeline/lib/Timeline.css';
-import './BookingsTimeline.css';
+import React, { Component } from "react";
+import moment from "moment";
+import "moment/locale/sl";
+import Timeline, { TimelineHeaders, SidebarHeader, DateHeader } from "react-calendar-timeline";
+import { rooms, bookings } from "./dummy_data";
+import "react-calendar-timeline/lib/Timeline.css";
+import "./BookingsTimeline.css";
 
 export default class BookingsTimeline extends Component {
   constructor(props) {
@@ -99,8 +99,8 @@ export default class BookingsTimeline extends Component {
       <Timeline
         groups={rooms}
         items={bookings}
-        defaultTimeStart={moment().startOf('day').add(-3, 'day')}
-        defaultTimeEnd={moment().startOf('day').add(5, 'day')}
+        defaultTimeStart={moment().startOf("day").add(-3, "day")}
+        defaultTimeEnd={moment().startOf("day").add(5, "day")}
         sidebarWidth={0}
         lineHeight={52}
         itemHeightRatio={0.5}
