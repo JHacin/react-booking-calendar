@@ -30,12 +30,12 @@ export default class BookingsTimeline extends Component {
     return !data.isMonth && intervalContext.interval.startTime.isSame(data.currentDate, "day");
   };
 
-  onItemSelect = (itemId, e, time) => {
-    console.log(`clicked item with ID ${itemId}`);
+  onItemSelect = (itemId, e, time, onItemSelectParentUpdate) => {
+    onItemSelectParentUpdate();
   };
 
-  onCanvasClick = (groupId, time, e) => {
-    console.log("clicked canvas");
+  onCanvasClick = (groupId, time, e, onCanvasClickParentUpdate) => {
+    onCanvasClickParentUpdate();
   };
 
   itemRenderer = ({ item, itemContext, getItemProps }) => {
@@ -93,6 +93,7 @@ export default class BookingsTimeline extends Component {
   };
 
   render() {
+    const { onItemSelectParentUpdate, onCanvasClickParentUpdate } = this.props;
     const currentDate = moment();
 
     return (
@@ -106,8 +107,8 @@ export default class BookingsTimeline extends Component {
         itemHeightRatio={0.5}
         canMove={false}
         itemRenderer={this.itemRenderer}
-        onItemSelect={this.onItemSelect}
-        onCanvasClick={this.onCanvasClick}
+        onItemSelect={(itemId, e, time) => this.onItemSelect(itemId, e, time, onItemSelectParentUpdate)}
+        onCanvasClick={(groupId, time, e) => this.onCanvasClick(groupId, time, e, onCanvasClickParentUpdate)}
       >
         <TimelineHeaders>
           <SidebarHeader/>

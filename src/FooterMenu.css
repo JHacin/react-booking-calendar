@@ -1,7 +1,6 @@
 .App-FooterMenu {
   display: flex;
-  justify-content: space-around;
-  padding: 10px 20px;
+  
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   box-shadow: 0 0 6px var(--color-border-lightgray);
@@ -13,6 +12,13 @@
   box-sizing: border-box;
   background: var(--color-white);
   font-weight: 300;
+}
+
+.App-FooterMenu-content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
 }
 
 .FooterMenu-item {
