@@ -31,7 +31,7 @@ export default class BookingsTimeline extends Component {
   };
 
   onItemSelect = (itemId, e, time, onItemSelectParentUpdate) => {
-    onItemSelectParentUpdate();
+    onItemSelectParentUpdate(itemId);
   };
 
   onCanvasClick = (groupId, time, e, onCanvasClickParentUpdate) => {

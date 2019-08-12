@@ -27,7 +27,7 @@ export default class FooterMenu extends Component {
     return (
       <AnimateHeight
         height={ visible ? 60 : 0 }
-        duration={ 500 }
+        duration={ 300 }
         className="App-FooterMenu"
         contentClassName="App-FooterMenu-content-wrapper"
       >

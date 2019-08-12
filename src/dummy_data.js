@@ -143,3 +143,10 @@ export const bookings = [
     end_time: moment().add(10, "day"),
   }
 ];
+
+let bookingsMapTemp = {};
+bookings.forEach(booking => {
+  bookingsMapTemp[booking.id] = booking;
+});
+
+export const bookingsMappedById = bookingsMapTemp;

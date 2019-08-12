@@ -1,0 +1,29 @@
+.App-FooterItemDetails {
+  display: flex;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 6px var(--color-border-lightgray);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-menu-height);
+  z-index: 99;
+  box-sizing: border-box;
+  background: var(--color-white);
+  font-weight: 300;
+}
+
+.App-FooterItemDetails-content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}
+
+.ItemDetails-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: auto;
+}

@@ -4,6 +4,7 @@ import { AnimatedRoute } from "react-router-transition";
 import "./App.css";
 import BookingsTimeline from "./BookingsTimeline";
 import FooterMenu from "./FooterMenu";
+import FooterItemDetails from "./FooterItemDetails";
 
 function Rooms() {
   return <div>Rooms</div>
@@ -33,26 +34,34 @@ function AnimatedRouteHOC(props) {
   );
 }
 
-
-
 export default class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      navbarVisible: true
+      navbarVisible: true,
+      menuDetailsVisible: false,
+      selectedItemId: null
     }
 
     this.onTimelineItemClick = this.onTimelineItemClick.bind(this);
+    this.onCanvasClick = this.onCanvasClick.bind(this);
     this.getTimelineWithProps = this.getTimelineWithProps.bind(this);
   }
 
-  onTimelineItemClick = () => {
-    this.setState({ navbarVisible: false });
+  onTimelineItemClick = (itemId) => {
+    this.setState({
+      navbarVisible: false,
+      menuDetailsVisible: true,
+      selectedItemId: itemId
+    });
   }
 
   onCanvasClick = () => {
-    this.setState({ navbarVisible: true });
+    this.setState({
+      navbarVisible: true,
+      menuDetailsVisible: false,
+    });
   }
 
   getTimelineWithProps = () => {
@@ -65,7 +74,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { navbarVisible } = this.state;
+    const { navbarVisible, menuDetailsVisible, selectedItemId } = this.state;
 
     return (
       <Router className="App">
@@ -73,6 +82,7 @@ export default class App extends Component {
         <AnimatedRouteHOC path="/rooms/" component={Rooms} />
         <AnimatedRouteHOC path="/settings/" component={Settings} />
         <FooterMenu visible={navbarVisible} />
+        <FooterItemDetails visible={menuDetailsVisible} selectedItemId={selectedItemId} />
       </Router>
     );
   } 
