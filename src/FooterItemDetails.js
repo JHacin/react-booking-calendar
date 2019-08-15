@@ -9,17 +9,26 @@ const ItemDetails = item => {
   
   return (
     <div className="item-details-wrapper">
-      <span>{ title }</span>
-      <span><strong>{ start_time.format('D.M.YYYY, HH:mm') }</strong></span>
-      <span>Lorem ipsum dolor sit amet ...</span>
+      <div className="item-details-data">
+        <span className="item-details-title">{ title }</span>
+        <span className="item-details-date">{ start_time.format('D.M.YYYY, HH:mm') }</span>
+        <span className="item-details-description">Lorem ipsum dolor sit amet ...</span>
+      </div>
       <div className="item-details-buttons">
-        <button>Edit</button>
-        <button>Detail</button>
-        <button>Remove</button>
+        <ItemDetailsButton text="Edit" />
+        <ItemDetailsButton text="Detail" />
+        <ItemDetailsButton text="Remove" />
       </div>
     </div>
   );
 };
+
+const ItemDetailsButton = props => {
+  const { text } = props;
+  return (
+    <button className="item-details-button">{text}</button>
+  );
+}
 
 export default class FooterItemDetails extends Component {
   render() {

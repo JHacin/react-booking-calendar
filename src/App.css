@@ -6,6 +6,7 @@
   --color-black: #000;
   --color-border-lightgray: rgba(0, 0, 0, 0.16);
   --color-lightgray: #f0f3f4;
+  --color-red: #d32f2f;
 
   /* Dimensions */
   --footer-menu-height: 60px;
@@ -29,6 +30,10 @@ body {
 a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
+}
+
+button:focus {
+  outline: none;
 }
 
 .switch-wrapper {
