@@ -9,12 +9,13 @@ const ItemDetails = item => {
   
   return (
     <div className="item-details-wrapper">
+      <div className="item-details-pull-rectangle"></div>
       <div className="item-details-data">
         <span className="item-details-title">{ title }</span>
         <span className="item-details-date">{ start_time.format('D.M.YYYY, HH:mm') }</span>
         <span className="item-details-description">Lorem ipsum dolor sit amet ...</span>
       </div>
-      <div className="item-details-buttons">
+      <div className="item-details-button-wrapper">
         <ItemDetailsButton text="Edit" />
         <ItemDetailsButton text="Detail" />
         <ItemDetailsButton text="Remove" />
@@ -36,17 +37,17 @@ export default class FooterItemDetails extends Component {
     const item = bookingsMappedById[selectedItemId];
 
     return (
-      <AnimateHeight
-        height={ visible ? 200 : 0 }
-        duration={ 300 }
-        className="footer-box"
-        contentClassName="footer-box-content-wrapper"
-      >
-        {item
-          ? <ItemDetails item={item} />
-          : false
-        }
-      </AnimateHeight>
+        <AnimateHeight
+          height={ visible ? 200 : 0 }
+          duration={ 300 }
+          className="footer-box"
+          contentClassName="footer-box-content-wrapper"
+        >
+          {item
+            ? <ItemDetails item={item} />
+            : false
+          }
+        </AnimateHeight>
     );
   }
 }
