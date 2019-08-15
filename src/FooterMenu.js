@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import AnimateHeight from 'react-animate-height';
+import "./FooterBox.css";
 import "./FooterMenu.css";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -10,7 +11,7 @@ const FooterMenuItem = props => {
   return (
     <NavLink
       to={link}
-      className="FooterMenu-item"
+      className="footer-menu-item"
       activeClassName="active"
       exact
     >
@@ -28,8 +29,8 @@ export default class FooterMenu extends Component {
       <AnimateHeight
         height={ visible ? 60 : 0 }
         duration={ 300 }
-        className="App-FooterMenu"
-        contentClassName="App-FooterMenu-content-wrapper"
+        className="footer-box"
+        contentClassName="footer-box-content-wrapper"
       >
         <FooterMenuItem
           fontAwesomeClass="fa fa-bed"

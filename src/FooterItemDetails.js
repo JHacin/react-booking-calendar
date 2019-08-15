@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import AnimateHeight from 'react-animate-height';
 import { bookingsMappedById } from "./dummy_data";
+import "./FooterBox.css";
 import "./FooterItemDetails.css";
 
 const ItemDetails = item => {
   const { title, start_time } = item.item;
   
   return (
-    <div className="ItemDetails-wrapper">
+    <div className="item-details-wrapper">
       <span>{ title }</span>
       <span><strong>{ start_time.format('D.M.YYYY, HH:mm') }</strong></span>
       <span>Lorem ipsum dolor sit amet ...</span>
-      <div className="ItemDetails-buttons">
+      <div className="item-details-buttons">
         <button>Edit</button>
         <button>Detail</button>
         <button>Remove</button>
@@ -29,8 +30,8 @@ export default class FooterItemDetails extends Component {
       <AnimateHeight
         height={ visible ? 200 : 0 }
         duration={ 300 }
-        className="App-FooterItemDetails"
-        contentClassName="App-FooterItemDetails-content-wrapper"
+        className="footer-box"
+        contentClassName="footer-box-content-wrapper"
       >
         {item
           ? <ItemDetails item={item} />

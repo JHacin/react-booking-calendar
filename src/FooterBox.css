@@ -1,0 +1,21 @@
+.footer-box {
+  display: flex;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 0.6rem var(--color-border-lightgray);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-menu-height);
+  z-index: 99;
+  box-sizing: border-box;
+  background: var(--color-white);
+  font-weight: 300;
+}
+
+.footer-box-content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+}

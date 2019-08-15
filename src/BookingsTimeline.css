@@ -3,7 +3,7 @@
   border-bottom: none;
   position: relative;
   z-index: 99;
-  box-shadow: var(--color-border-lightgray) 0 0 10px;
+  box-shadow: var(--color-border-lightgray) 0 0 1rem;
 }
 
 .react-calendar-timeline .rct-calendar-header {
@@ -14,13 +14,13 @@
   pointer-events: none;
   border: none;
   background: var(--color-white);
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 
 .react-calendar-timeline .rct-dateHeader-primary {
   color: var(--color-black);
-  padding-right: 26px;
+  padding-right: 2.6rem;
   text-transform: uppercase;
 }
 

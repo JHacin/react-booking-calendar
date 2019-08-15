@@ -11,6 +11,11 @@
   --footer-menu-height: 60px;
 }
 
+html {
+  box-sizing: border-box;
+  font-size: 72.55%;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;

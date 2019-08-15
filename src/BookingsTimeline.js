@@ -48,17 +48,17 @@ export default class BookingsTimeline extends Component {
             background: item.start_time.isAfter() ? "#aaa" : "#d32f2f",
             border: `3px solid ${ itemContext.selected ? "#fff700" : "transparent"}`,
             borderRadius: "12.5px",
-            boxShadow: "rgba(0, 0, 0, 0.16) 0 3px 6px",
+            boxShadow: "rgba(0, 0, 0, 0.16) 0 0.3rem 0.6rem",
           }
         })}
       >
         <div
           style={{
             position: "sticky",
-            left: "0px",
+            left: "0",
             display: "inline-block",
             overflow: "hidden",
-            padding: "0 10px",
+            padding: "0 1rem",
             textOverflow: "ellipsis",
             whiteSpace: "nowrap"
           }}
@@ -80,8 +80,8 @@ export default class BookingsTimeline extends Component {
         style={{
           position: data.isMonth ? "sticky" : "static",
           marginRight: data.isMonth ? "auto" : "inherit",
-          left: "0px",
-          padding: "0 10px",
+          left: "0",
+          padding: "0 1rem",
           fontWeight: this.isWeekendDay(intervalContext, data) || this.isCurrentDay(intervalContext, data) ? "400" : "300",
           color: this.isCurrentDay(intervalContext, data) ? "#d32f2f" : "#000",
         }}
