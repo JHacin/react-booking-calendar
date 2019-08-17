@@ -18,7 +18,7 @@ const ItemDetails = item => {
       <div className="item-details-button-wrapper">
         <ItemDetailsButton text="Edit" />
         <ItemDetailsButton text="Detail" />
-        <ItemDetailsButton text="Remove" />
+        <ItemDetailsButton text="Move" />
       </div>
     </div>
   );

@@ -52,14 +52,18 @@
 .item-details-button {
   border: 1px solid var(--color-red);
   border-radius: 20px;
-  padding: 1.1rem 3.14rem;
-  margin-right: 2.5rem;
+  padding: 1rem 2rem;
+  margin-right: 2.1rem;
   background: none;
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--color-red);
   transition: all 0.1s ease-in-out;
+}
+
+.item-details-button:last-of-type {
+  margin-right: 0;
 }
 
 .item-details-button:hover {
