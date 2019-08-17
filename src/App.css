@@ -35,11 +35,3 @@ a {
 button:focus {
   outline: none;
 }
-
-.switch-wrapper {
-  position: relative;
-}
- 
-.switch-wrapper > div {
-  position: absolute;
-}

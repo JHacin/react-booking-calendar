@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { AnimatedRoute } from "react-router-transition";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import BookingsTimeline from "./BookingsTimeline";
 import FooterMenu from "./FooterMenu";
@@ -12,26 +11,6 @@ function Rooms() {
 
 function Settings() {
   return <div>Settings</div>
-}
-
-function AnimatedRouteHOC(props) {
-  const { path, exact, component } = props;
-
-  const atEnterOrLeave = { opacity: 0 };
-  const atActive = { opacity: 1 };
-  const className = "switch-wrapper";
-
-  return (
-    <AnimatedRoute
-      atEnter={atEnterOrLeave}
-      atLeave={atEnterOrLeave}
-      atActive={atActive}
-      className={className}
-      path={path}
-      exact={exact}
-      component={component}
-    />
-  );
 }
 
 export default class App extends Component {
@@ -78,9 +57,9 @@ export default class App extends Component {
 
     return (
       <Router className="App">
-        <AnimatedRouteHOC path="/" exact component={this.getTimelineWithProps} />
-        <AnimatedRouteHOC path="/rooms/" component={Rooms} />
-        <AnimatedRouteHOC path="/settings/" component={Settings} />
+        <Route path="/" exact component={this.getTimelineWithProps} />
+        <Route path="/rooms/" component={Rooms} />
+        <Route path="/settings/" component={Settings} />
         <FooterMenu visible={navbarVisible} />
         <FooterItemDetails visible={menuDetailsVisible} selectedItemId={selectedItemId} />
       </Router>
