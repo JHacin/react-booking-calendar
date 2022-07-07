@@ -5,7 +5,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "interactjs": "^1.5.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.8.6",
     "react-animate-height": "^2.0.15",
     "react-calendar-timeline": "^0.26.0",
